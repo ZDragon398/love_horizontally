@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 // --- TYPE DEFINITIONS ---
@@ -19,7 +18,7 @@ interface Row {
 
 // --- CONSTANTS ---
 const PHRASE = "I Love You Princess ";
-const COLORS = ["#00ff7f", "#00f87c", "#00f079", "#00e876", "#00e073", "#00d26a"];
+const COLORS = ["#ff00a0", "#ff33b8", "#ff66cf", "#ff80d9", "#ff99e0", "#f30096"];
 
 // --- HELPER FUNCTIONS ---
 const getRandom = <T,>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
@@ -45,7 +44,7 @@ const PauseIcon: React.FC<{ className?: string }> = ({ className }) => (
 
 const Controls: React.FC<ControlsProps> = ({ isPaused, setIsPaused, speed, setSpeed, glow, setGlow }) => {
   return (
-    <div className="absolute top-2 right-2 md:top-4 md:right-4 p-2 md:p-3 bg-black/50 backdrop-blur-sm rounded-lg text-xs text-[#00ff7f] z-10 select-none flex items-center gap-4 transition-opacity hover:opacity-100 opacity-70">
+    <div className="absolute top-2 right-2 md:top-4 md:right-4 p-2 md:p-3 bg-black/50 backdrop-blur-sm rounded-lg text-xs text-[#ff00a0] z-10 select-none flex items-center gap-4 transition-opacity hover:opacity-100 opacity-70">
       <button onClick={() => setIsPaused(!isPaused)} title={isPaused ? "Play" : "Pause"} className="hover:text-white transition-colors">
         {isPaused ? <PlayIcon className="w-5 h-5" /> : <PauseIcon className="w-5 h-5" />}
       </button>
@@ -69,7 +68,7 @@ const Controls: React.FC<ControlsProps> = ({ isPaused, setIsPaused, speed, setSp
         <button
           id="glow"
           onClick={() => setGlow(!glow)}
-          className={`w-10 h-5 rounded-full transition-colors ${glow ? 'bg-[#00ff7f]' : 'bg-gray-700'}`}
+          className={`w-10 h-5 rounded-full transition-colors ${glow ? 'bg-[#ff00a0]' : 'bg-gray-700'}`}
         >
           <span className={`block w-4 h-4 m-0.5 bg-white rounded-full transform transition-transform ${glow ? 'translate-x-5' : 'translate-x-0'}`} />
         </button>
@@ -151,7 +150,7 @@ const App: React.FC = () => {
 
     if (glowRef.current) {
         ctx.shadowBlur = 8;
-        ctx.shadowColor = '#00ff7f80';
+        ctx.shadowColor = '#ff00a080';
     } else {
         ctx.shadowBlur = 0;
     }
