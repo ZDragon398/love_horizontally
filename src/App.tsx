@@ -110,7 +110,7 @@ const App: React.FC = () => {
     if (!ctx) return;
     ctx.scale(dpr, dpr);
 
-    const fontSize = clamp(window.innerWidth / 80, 16, 24);
+    const fontSize = clamp(window.innerWidth / 90, 14, 20);
     ctx.font = `500 ${fontSize}px 'IBM Plex Mono', monospace`;
     const metrics = ctx.measureText("W");
     charSize.current = { width: metrics.width, height: fontSize };
